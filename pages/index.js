@@ -4,17 +4,19 @@ export const getServerSideProps = () => {
   return {
     props: {
       serverTime: new Date().toTimeString(),
+      serverTimeMs: new Date().getTime(),
     },
   };
 };
 export default function Home(props) {
-  console.log(props)
+  console.log(props);
   return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
       </Head>
       {props.serverTime}
+      {props.serverTimeMs}
 
       <main className={styles.main}>
         <h1 className={styles.title}>
