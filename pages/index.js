@@ -98,6 +98,9 @@ export default function Home(props) {
       return item.user.name;
     })
     .join(", ");
+
+  const unused_data = "wrong case";
+
   return (
     <div className={styles.container}>
       <Head>
