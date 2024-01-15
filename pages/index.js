@@ -100,6 +100,10 @@ export default function Home(props) {
     .join(", ");
 
   const unused_data = "wrong case";
+  const unused_data2 = "wrong case";
+  const unused_data3 = "wrong case";
+
+  let a = unused_data + unused_data2;
 
   return (
     <div className={styles.container}>
