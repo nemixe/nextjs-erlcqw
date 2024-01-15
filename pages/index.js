@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 export const getServerSideProps = () => {
   return {
     props: {
@@ -8,8 +8,96 @@ export const getServerSideProps = () => {
     },
   };
 };
+const dummyData = [
+  {
+    user: {
+      name: "John Doe",
+      age: 20,
+      address: {
+        city: "Jakarta",
+        country: "Indonesia",
+      },
+    },
+    items: [
+      {
+        name: "Phone",
+        price: 1000,
+      },
+      {
+        name: "Laptop",
+        price: 2000,
+      },
+    ],
+  },
+  {
+    user: {
+      name: "Jane Doe",
+      age: 21,
+      address: {
+        city: "Bandung",
+        country: "Indonesia",
+      },
+    },
+    items: [
+      {
+        name: "Mouse",
+        price: 10,
+      },
+      {
+        name: "Keyboard",
+        price: 20,
+      },
+    ],
+  },
+  {
+    user: {
+      name: "Budi",
+      age: 22,
+      address: {
+        city: "Jakarta",
+        country: "Indonesia",
+      },
+    },
+    items: [
+      {
+        name: "Monitor",
+        price: 100,
+      },
+      {
+        name: "PC",
+        price: 200,
+      },
+    ],
+  },
+  {
+    user: {
+      name: "Susi",
+      age: 23,
+      address: {
+        city: "Bandung",
+        country: "Indonesia",
+      },
+    },
+    items: [
+      {
+        name: "Table",
+        price: 1,
+      },
+      {
+        name: "Chair",
+        price: 2,
+      },
+    ],
+  },
+];
 export default function Home(props) {
-  console.log(props);
+  const data = dummyData
+    .map((item) => {
+      const user = item.user;
+      user.items = item.items;
+      return item.user.name;
+    })
+    .join(", ");
   return (
     <div className={styles.container}>
       <Head>
@@ -22,9 +110,10 @@ export default function Home(props) {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        {data}
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
