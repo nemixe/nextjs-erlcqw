@@ -95,6 +95,8 @@ export default function Home(props) {
     .map((item) => {
       const user = item.user;
       user.items = item.items;
+      user.age = item.age;
+
       return item.user.name;
     })
     .join(", ");
